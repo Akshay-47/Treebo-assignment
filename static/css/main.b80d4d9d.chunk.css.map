@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,KACE,sBAAuB,CACvB,QAAS,CACT,eACF,CACA,OACE,wBAAyB,CACzB,gBAAiB,CACjB,UAAY,CACZ,YACF","file":"main.b80d4d9d.chunk.css","sourcesContent":["body {\n  font-family: sans-serif;\n  margin: 0;\n  min-height: 50vh;\n}\nheader {\n  background-color: #03a9f4;\n  font-size: 1.5rem;\n  color: white;\n  padding: 1rem;\n}\n"]}

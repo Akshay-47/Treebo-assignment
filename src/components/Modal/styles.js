@@ -1,15 +1,6 @@
 import styled from "styled-components";
 
-const ModalWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-`;
-
-const ModalContent = styled.div`
+const ModalContainer = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -19,17 +10,28 @@ const ModalContent = styled.div`
   z-index: 99;
   height: ${(props) => props.height || "auto"};
   width: ${(props) => props.width || "auto"};
+  z-index: ${(props) => 99 + props.zIndex || 99};
+  border-radius: 0.3rem;
+  border: 1px solid #dee2e6;
+`;
+
+const ModalContent = styled.div`
+  padding: 1rem;
 `;
 
 const CloseButton = styled.button`
   background-color: transparent;
   cursor: pointer;
   border: none;
-  font-size: 28px;
+  font-size: 2rem;
+  color: #7f7f7f;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 10px;
+  top: 10px;
   user-select: none;
+  &:hover {
+    color: black;
+  }
 `;
 
 const Overlay = styled.div`
@@ -38,7 +40,24 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: ${(props) => 99 + props.zIndex || 99};
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
-export { ModalWrapper, ModalContent, CloseButton, Overlay };
+const ModalTitle = styled.h2`
+  margin: 0;
+`;
+
+const ModalHeader = styled.div`
+  border-bottom: 1px solid #7f7f7f;
+  padding: 1rem;
+`;
+
+export {
+  ModalContent,
+  CloseButton,
+  Overlay,
+  ModalHeader,
+  ModalTitle,
+  ModalContainer,
+};

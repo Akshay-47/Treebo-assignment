@@ -39,7 +39,7 @@ EventEmitter.prototype.on = function (event, listener) {
   this.events[event].push(listener);
 };
 
-EventEmitter.prototype.removeListener = function (event, listener) {
+EventEmitter.prototype.off = function (event, listener) {
   var idx;
 
   if (typeof this.events[event] === "object") {
@@ -69,7 +69,7 @@ EventEmitter.prototype.emit = function (event) {
 
 EventEmitter.prototype.once = function (event, listener) {
   this.on(event, function g() {
-    this.removeListener(event, g);
+    this.off(event, g);
     listener.apply(this, arguments);
   });
 };
